@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Housing.com Landing Page</title>
+
+    <!-- CSS File  -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <div class="hero">
+      <nav>
+        <div class="logo">
+          <img src="assets/img/logo.png" />
+        </div>
+        <button type="button">List Property</button>
+        <img src="assets/img/menu.png" class="menu-icon" />
+      </nav>
+      <div class="row">
+        <div class="col-1">
+          <h1>
+            Properties to buy<br />
+            in Delhi
+          </h1>
+          <p>
+            You can explore the best property near you or location you want to
+            get the property
+          </p>
+          <button type="button">Explore Properties</button>
+          <ul>
+            <li class="btn active"></li>
+            <li class="btn"></li>
+            <li class="btn"></li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <img src="assets/img/pic1.png" id="banner" />
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript File  -->
+    <script>
+      var btn = document.getElementsByClassName("btn");
+      var banner = document.getElementById("banner");
+
+      btn[0].onclick = function () {
+        banner.src = "assets/img/pic1.png";
+        animation();
+        this.classList.add("active");
+      };
+      btn[1].onclick = function () {
+        banner.src = "assets/img/pic2.png";
+        animation();
+        this.classList.add("active");
+      };
+      btn[2].onclick = function () {
+        banner.src = "assets/img/pic3.png";
+        animation();
+        this.classList.add("active");
+      };
+
+      function animation() {
+        banner.classList.add("zoom");
+        setTimeout(function () {
+          banner.classList.remove("zoom");
+        }, 500);
+
+        for (b of btn) {
+          b.classList.remove("active");
+        }
+      }
+    </script>
+  </body>
+</html>
